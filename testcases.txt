@@ -1,0 +1,3 @@
+efabcdef,asb|cdf
+abc,^abc
+xyz,xyz$
