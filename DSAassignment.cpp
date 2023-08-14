@@ -46,8 +46,18 @@ void KMP(const std::string& text, const std::string& pattern) {
 }
 
 int main() {
-    std::string text = "ABABDABACDABABCABAB";
     std::string pattern = "ABABCABAB";
+
+    // Read text from file
+    std::ifstream inputFile("text.txt");
+    if (!inputFile) {
+        std::cerr << "Error opening file." << std::endl;
+        return 1;
+    }
+
+    std::string text((std::istreambuf_iterator<char>(inputFile)), std::istreambuf_iterator<char>());
+    inputFile.close();
+
     KMP(text, pattern);
     return 0;
 }
